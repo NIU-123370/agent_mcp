@@ -1,0 +1,35 @@
+{
+  "name": "writing_assistant",
+  "description": "写作生成 — 基于主题和参考资料生成文章",
+  "parameters": [
+    {
+      "name": "topic",
+      "description": "写作主题",
+      "required": true
+    },
+    {
+      "name": "references",
+      "description": "参考资料",
+      "required": true
+    },
+    {
+      "name": "style",
+      "description": "写作风格（正式/轻松/学术/幽默）",
+      "required": false,
+      "default": "正式"
+    },
+    {
+      "name": "user_profile",
+      "description": "用户画像（写作偏好等），无则传空字符串",
+      "required": false,
+      "default": ""
+    },
+    {
+      "name": "history",
+      "description": "本轮之前的写作对话摘要，无则传空字符串",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "template": "你是一个专业的 AI 写作助手。请根据给定的主题和参考资料，生成或修改文本。\n\n## 写作要求\n- 主题/任务：{topic}\n- 风格：{style}\n- 内容要结构清晰、逻辑连贯\n- 适当引用参考资料中的信息；若用户要求基于上文修改，请结合对话历史理解意图\n\n## 用户偏好\n{user_profile}\n\n## 对话历史\n{history}\n\n## 参考资料\n{references}\n"
+}

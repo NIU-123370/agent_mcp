@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InkFlow — AI 写作助手</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+  <!-- 顶栏 -->
+  <div class="header">
+    <h1>InkFlow — AI 写作助手</h1>
+    <div class="actions">
+      <label for="styleSelect">文风</label>
+      <select id="styleSelect">
+        <option value="正式" selected>正式</option>
+        <option value="轻松">轻松</option>
+        <option value="学术">学术</option>
+        <option value="幽默">幽默</option>
+      </select>
+      <button onclick="clearMemory()">清空记忆</button>
+      <button onclick="showProfile()">用户画像</button>
+    </div>
+  </div>
+
+  <!-- 会话信息栏 -->
+  <div class="session-bar">
+    <span id="sessionInfo">会话: 未开始</span>
+    <button onclick="newSession()">新建会话</button>
+  </div>
+
+  <!-- 消息列表 -->
+  <div class="messages" id="messages">
+    <div class="msg bot">
+      <div class="label">助手</div>
+      <div class="bubble">你好！我是 InkFlow 写作助手。请告诉我写作主题或修改要求，我可以帮你创作和润色文章。</div>
+    </div>
+  </div>
+
+  <!-- 输入区 -->
+  <div class="input-area">
+    <textarea id="input" placeholder="输入写作主题或润色要求… (Enter 发送，Shift+Enter 换行)" rows="1"></textarea>
+    <button id="sendBtn" onclick="send()">发送</button>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
